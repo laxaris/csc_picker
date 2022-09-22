@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     GlobalKey<CSCPickerState> _cscPickerKey = GlobalKey();
 
     return Scaffold(
