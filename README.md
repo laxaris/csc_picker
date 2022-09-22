@@ -19,6 +19,12 @@ To use this Package, add `csc_picker` as a [dependency in your pubspec.yaml](htt
 
 ```dart
       	CSCPicker(
+          isStateEmpty:(){
+            print('There is no state to return.');
+          }
+          isCityEmpty:(){
+            print('There is no city to return.')
+          }
               onCountryChanged: (value) {
       			setState(() {
       					countryValue = value;
@@ -122,6 +128,12 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ///Adding CSC Picker Widget in app
                 CSCPicker(
+                  isStateEmpty:(){
+                    //any void function to trigger when there is no state to return on selected country.
+                  }
+                  isCityEmpty:(){
+                    //any void function to trigger when there is no city to return on selected country.
+                  }
                   ///Enable disable state dropdown [OPTIONAL PARAMETER]
                   showStates: true,
 
