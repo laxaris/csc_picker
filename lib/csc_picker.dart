@@ -520,6 +520,8 @@ class CSCPicker extends StatefulWidget {
   ///CSC Picker Constructor
   const CSCPicker({
     Key? key,
+    this.isStateEmpty,
+    this.isCityEmpty,
     this.onCountryChanged,
     this.onStateChanged,
     this.onCityChanged,
@@ -550,6 +552,9 @@ class CSCPicker extends StatefulWidget {
   final ValueChanged<String>? onCountryChanged;
   final ValueChanged<String?>? onStateChanged;
   final ValueChanged<String?>? onCityChanged;
+
+  final VoidCallback? isStateEmpty;
+  final VoidCallback? isCityEmpty;
 
   final String? currentCountry;
   final String? currentState;
@@ -681,7 +686,9 @@ class CSCPickerState extends State<CSCPicker> {
       });
     });
     _states.sort((a, b) => a!.compareTo(b!));
-    print(_states);
+    if (_states.isEmpty) {
+      widget.isStateEmpty!();
+    }
     return _states;
   }
 
@@ -718,7 +725,9 @@ class CSCPickerState extends State<CSCPicker> {
       });
     });
     _cities.sort((a, b) => a!.compareTo(b!));
-    print(_cities);
+    if (_cities.isEmpty) {
+      widget.isCityEmpty!();
+    }
     return _cities;
   }
 
