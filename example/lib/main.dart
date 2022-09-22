@@ -138,6 +138,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       cityValue = value;
                     });
                   },
+                  isCityEmpty: () {},
+                  isStateEmpty: () {},
                 ),
 
                 ///print newly selected country state and city in Text Widget
