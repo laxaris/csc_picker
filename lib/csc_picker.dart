@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'model/select_status_model.dart';
 
 enum Layout { vertical, horizontal }
+
 enum CountryFlag { SHOW_IN_DROP_DOWN_ONLY, ENABLE, DISABLE }
+
 enum DefaultCountry {
   Afghanistan,
   Aland_Islands,
@@ -260,6 +262,7 @@ enum DefaultCountry {
   Curacao,
   Sint_Maarten_Dutch_part
 }
+
 const Map<DefaultCountry, int> DefaultCountries = {
   DefaultCountry.Afghanistan: 0,
   DefaultCountry.Aland_Islands: 1,
@@ -678,6 +681,7 @@ class CSCPickerState extends State<CSCPicker> {
       });
     });
     _states.sort((a, b) => a!.compareTo(b!));
+    print(_states);
     return _states;
   }
 
@@ -714,6 +718,7 @@ class CSCPickerState extends State<CSCPicker> {
       });
     });
     _cities.sort((a, b) => a!.compareTo(b!));
+    print(_cities);
     return _cities;
   }
 
